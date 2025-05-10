@@ -32,6 +32,12 @@ module.exports = tseslint.config(
           style: "kebab-case",
         },
       ],
+      "prettier/prettier": [
+        "error",
+        {
+          endOfLine: "\n"
+        }
+      ]
     },
   },
   {

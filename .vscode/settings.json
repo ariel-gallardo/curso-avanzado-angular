@@ -1,4 +1,5 @@
 {
   "eslint.configFile": "./eslint.config.json",
-  "eslint.validate": ["typescript", "html"]
+  "eslint.validate": ["typescript", "html"],
+  "files.eol": "\n"
 }
