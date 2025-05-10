@@ -108,6 +108,9 @@
             },
             "development": {
               "buildTarget": "store:build:development"
+            },
+            "staging": {
+              "buildTarget": "store:build:staging"
             }
           },
           "defaultConfiguration": "development"
