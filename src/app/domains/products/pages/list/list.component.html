@@ -8,7 +8,7 @@
         <a routerLink="/">All</a>
       </li>
       @if(mCategories){
-        @for (category of mCategories; track category) {
+        @for (category of mCategories; track category.id) {
           <li>
             <a routerLink="/category/{{category.slug}}">{{
               category.name
@@ -21,7 +21,7 @@
   </div>
   <div class="grid grid-cols-2 gap-8 w-full md:grid-cols-4">
     @if(mProducts){
-      @for (product of mProducts; track product) {
+      @for (product of mProducts; track product.id) {
         <app-product [product]="product" (addToCart)="addToCart($event)" />
       }
     }
