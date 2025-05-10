@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { LayoutComponent } from '@shared/components/layout/layout.component';
 import { NotFoundComponent } from '@info/pages/not-found/not-found.component';
+import { LocationsPage } from '@info/pages/locations/locations.component';
 
 export const routes: Routes = [
   {
@@ -28,6 +29,10 @@ export const routes: Routes = [
           import(
             './domains/products/pages/product-detail/product-detail.component'
           ),
+      },
+      {
+        path: 'locations',
+        component: LocationsPage
       },
     ],
   },
