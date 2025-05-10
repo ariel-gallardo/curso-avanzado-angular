@@ -11,9 +11,9 @@ import { CartService } from '@shared/services/cart.service';
 })
 export default class ProductDetailComponent implements OnInit {
   readonly id = input<string>();
-  product = signal<Product | null>(null);
-  cover = linkedSignal(() => {
-    const p = this.product();
+  $product = signal<Product | null>(null);
+  $cover = linkedSignal(() => {
+    const p = this.$product();
     if(p){
       const image = p.images[0];
       if(image) return image;
@@ -29,18 +29,18 @@ export default class ProductDetailComponent implements OnInit {
     if (id) {
       this.productService.getOne(id).subscribe({
         next: (product) => {
-          this.product.set(product);
+          this.$product.set(product);
         },
       });
     }
   }
 
   changeCover(newImg: string) {
-    this.cover.set(newImg);
+    this.$cover.set(newImg);
   }
 
   addToCart() {
-    const product = this.product();
+    const product = this.$product();
     if (product) {
       this.cartService.addToCart(product);
     }
