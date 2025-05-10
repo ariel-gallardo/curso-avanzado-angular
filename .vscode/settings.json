@@ -1,0 +1,7 @@
+{
+  "eslint.configFile": "./eslint.config.json",
+  "eslint.validate": ["typescript", "html"],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  }
+}
