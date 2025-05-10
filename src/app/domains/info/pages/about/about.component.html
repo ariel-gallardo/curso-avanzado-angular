@@ -8,6 +8,11 @@
   </p>
   <p class="text-base">
     Numero de clientes
+  </p>
+  <p>
+    <input type="range" max="1000" min="0" [(ngModel)]="duration"  />
+  </p>
+  <p>
     @if (duration() > 0) {
       <app-counter [duration]="duration()" [message]="message()" />
     }
