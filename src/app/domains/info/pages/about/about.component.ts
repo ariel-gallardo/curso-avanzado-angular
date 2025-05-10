@@ -9,25 +9,19 @@ import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-about',
-  imports: [
-    CommonModule,
-    CounterComponent,
-    WaveAudioComponent,
-    FormsModule,
-  ],
+  imports: [CommonModule, CounterComponent, WaveAudioComponent, FormsModule],
   templateUrl: './about.component.html',
 })
 export default class AboutComponent {
   duration = signal(1000);
-  message = signal('Hola');
+  message = signal('Parent Message');
 
   changeDuration(event: Event) {
     const input = event.target as HTMLInputElement;
     this.duration.set(input.valueAsNumber);
   }
 
-  changeMessage(event: Event) {
-    const input = event.target as HTMLInputElement;
-    this.message.set(input.value);
+  sendMessageToChild(){
+    this.message.set('from Parent');
   }
 }

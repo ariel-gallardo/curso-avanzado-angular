@@ -1,2 +1,16 @@
-<div>{{ counter() }}</div>
-<div>{{ duration() }}</div>
+<div class="p-2 bg-blue-400">
+  <p class="text-400 font-bold">Child Component</p>
+  <div >
+    <div>{{ counter() }}</div>
+    <div>{{ duration() }}</div>
+    <div class="mt-[5vh]">
+      <div class="flex gap-1 align-content-center">
+        <h3 class="text-400">Message:</h3>
+        <p class="font-bold">{{ message() }}</p>
+      </div>
+      <div>
+        <p class="bg-blue-600 text-center font-bold hover:bg-blue-900 hover:text-white transition duration-300" (click)="sendMessageFromChild()">Send message from child</p>
+      </div>
+    </div>
+  </div>
+</div>
