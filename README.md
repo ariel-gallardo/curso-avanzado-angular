@@ -3,6 +3,8 @@
 [![Angular](https://img.shields.io/badge/Angular-19.1.6-DD0031?logo=angular&logoColor=white)](https://angular.io/)
 [![Node.js](https://img.shields.io/badge/Node.js-20.x-339933?logo=nodedotjs&logoColor=white)](https://nodejs.org/)
 
+# (Fake API Docs)[https://fakeapi.platzi.com/en/gql/users/]
+
 ## 📖 Resumen
 
 La evolución de un proyecto Angular requiere más que conocimientos básicos; demanda una comprensión profunda de **buenas prácticas**, **optimización de rendimiento** y **arquitectura escalable**.  
