@@ -1,12 +1,11 @@
 import {
   Component,
   input,
-  SimpleChanges,
   signal,
-  OnChanges,
   OnInit,
   AfterViewInit,
   OnDestroy,
+  model,
 } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
@@ -15,11 +14,9 @@ import { CommonModule } from '@angular/common';
   imports: [CommonModule],
   templateUrl: './counter.component.html',
 })
-export class CounterComponent
-  implements  OnInit, AfterViewInit, OnDestroy
-{
+export class CounterComponent implements OnInit, AfterViewInit, OnDestroy {
   duration = input.required<number>();
-  message = input.required<string>();
+  message = model.required<string>();
   counter = signal(0);
   counterRef: number | undefined;
 
@@ -61,5 +58,9 @@ export class CounterComponent
   doSomething() {
     console.log('change duration');
     // async
+  }
+
+  sendMessageFromChild(){
+    this.message.set('from child');
   }
 }

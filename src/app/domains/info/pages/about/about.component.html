@@ -1,5 +1,5 @@
-<div>
-  <h1 class="text-lg font-bold">About</h1>
+<div class="bg-blue-100 p-2">
+  <h1 class="text-lg font-bold">Parent Component</h1>
   <p class="text-base">
     Lorem ipsum dolor
     <span highlight>sit amet consectetur adipisicing elit.</span> Facere vel
@@ -14,10 +14,13 @@
   </p>
   <p>
     @if (duration() > 0) {
-      <app-counter [duration]="duration()" [message]="message()" />
+      <app-counter [duration]="duration()" [(message)]="message" />
     }
   </p>
-  <div>
+  <div class="my-5">
     <app-wave-audio audioUrl="assets/audio.mp3" />
+  </div>
+  <div class="my-3">
+    <p (click)="sendMessageToChild()" class="font-bold text-white bg-cyan-900 text-center hover:bg-cyan-200 hover:text-black">Send message from parent component</p>
   </div>
 </div>
