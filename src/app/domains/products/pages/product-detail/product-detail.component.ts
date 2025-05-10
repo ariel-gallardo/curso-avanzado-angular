@@ -1,4 +1,4 @@
-import { Component, inject, signal, OnInit, input } from '@angular/core';
+import { Component, inject, signal, OnInit, input, linkedSignal } from '@angular/core';
 import { CommonModule, NgOptimizedImage } from '@angular/common';
 import { ProductService } from '@shared/services/product.service';
 import { Product } from '@shared/models/product.model';
@@ -12,7 +12,15 @@ import { CartService } from '@shared/services/cart.service';
 export default class ProductDetailComponent implements OnInit {
   readonly id = input<string>();
   product = signal<Product | null>(null);
-  cover = signal('');
+  cover = linkedSignal(() => {
+    const p = this.product();
+    if(p){
+      const image = p.images[0];
+      if(image) return image;
+      return '';
+    }
+    return '';
+  });
   private productService = inject(ProductService);
   private cartService = inject(CartService);
 
@@ -22,9 +30,6 @@ export default class ProductDetailComponent implements OnInit {
       this.productService.getOne(id).subscribe({
         next: (product) => {
           this.product.set(product);
-          if (product.images.length > 0) {
-            this.cover.set(product.images[0]);
-          }
         },
       });
     }
