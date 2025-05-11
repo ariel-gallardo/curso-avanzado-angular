@@ -1,10 +1,26 @@
-<div>
-    <h1 class="text-lg font-bold">About</h1>
-    <p class="text-base">Lorem ipsum dolor <span highlight>sit amet consectetur adipisicing elit.</span> Facere vel delectus numquam aliquid itaque nulla. Alias fugiat est, voluptatem commodi soluta, ad et eveniet odit rem perferendis porro, quidem iste.</p>
-    <p class="text-base">Numero de clientes  @if (duration() > 0) {
-<app-counter [duration]="duration()" [message]="message()"/>
-}</p>
-    <div>
-        <app-wave-audio audioUrl="assets/audio.mp3" />
-    </div>
+<div class="bg-blue-100 p-2">
+  <h1 class="text-lg font-bold">Parent Component</h1>
+  <div class="text-base">
+    Lorem ipsum dolor
+    <span highlight>sit amet consectetur adipisicing elit.</span> Facere vel
+    delectus numquam aliquid itaque nulla. Alias fugiat est, voluptatem commodi
+    soluta, ad et eveniet odit rem perferendis porro, quidem iste.
+  </div>
+  <div class="text-base">
+    Numero de clientes
+  </div>
+  <div>
+    <input type="range" max="1000" min="0" [(ngModel)]="duration"  />
+  </div>
+  <div>
+    @if (duration() > 0) {
+      <app-counter [duration]="duration()" [(message)]="message" />
+    }
+  </div>
+  <div class="my-5">
+    <app-wave-audio audioUrl="assets/audio.mp3" />
+  </div>
+  <div class="my-3">
+    <p (click)="sendMessageToChild()" class="font-bold text-white bg-cyan-900 text-center hover:bg-cyan-200 hover:text-black">Send message from parent component</p>
+  </div>
 </div>
